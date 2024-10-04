@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTU-Buddy | Share Resources</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+ 
+header {
+    background-color: #701309;
+    color: #fff;
+    padding: 1rem;  
+    text-align: center;
+}
+ 
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+ 
+header nav ul li {
+    display: inline;
+    margin-right: 1rem;
+}
+ 
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+ 
+.hero {
+    background-color: #e6f2ff;
+    padding: 2rem;
+    text-align: center;
+}
+ 
+.hero img {
+    max-width: 100%;
+    height: auto;
+}
+ 
+footer {
+    background-color: #701309;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+ 
+.upload, .resources {
+    padding: 2rem;
+    background-color: #fff;
+    margin: 1rem auto;
+    width: 80%;
+    border-radius: 5px;
+}
+ 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+form label, form input, form select, form button {
+    margin: 0.5rem 0;
+    width: 100%;
+    max-width: 500px;
+}
+ 
+form input, form select {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+ 
+form button {
+    padding: 0.7rem;
+    background-color: #701309;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+ 
+form button:hover {
+    background-color:  #701309;
+}
+
+.ctulogo {
+            height: 100px; /* Adjusted height */
+            width: 300px;  /* Adjusted width */
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+
+        #navigation:hover {
+            color: salmon;
+            text-decoration: underline;
+            transition: color 0.5 ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Share Resources</h1>
+        <nav>
+            <ul>
+                <li><a href="CW412HomePage.html" id="navigation">Home</a></li>
+                <li><a href="CWD412FA1Timetable.html" id="navigation">Timetable</a></li>
+                <li><a href="CW412DisscusionPage.html" id="navigation">Discussion</a></li>
+                <li><a href="share-resources.html" id="navigation">Share Resources</a></li>
+                <li><a href="./CWD412AboutUs.html" id="navigation">About Us</a></li>
+                <li><a href="CW412ContactUS.html" id="navigation">Contact Us</a></li>
+ 
+            </ul>
+        </nav>
+        <img src="./CTUTrainingSolutionsWhite.png" alt="CTU Logo" class="ctulogo">
+    </header>
+    <section class="hero">
+        <h2>Your Ultimate Learning Companion</h2>
+        <p>CTU-Buddy is a program for students to embark on a newly developed learning system which accomadates experienced and none experienced students in I.T, CTU's mission statement is to reform the educational norms of South Africa.   </p>
+    </section>
+    <head>
+    <style>
+        form, #pdfList {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+        input[type="submit"], button {
+            background-color: #701309;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        input[type="submit"]:hover, button:hover {
+            background-color: #701309;
+        }
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>PDF Upload and Management</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="pdfFile" id="pdfFile" accept=".pdf" required>
+        <input type="submit" value="Upload PDF">
+        <div id="message"></div>
+    </form>
+ 
+    <div id="pdfList">
+        <h2>Uploaded PDFs</h2>
+        <table id="pdfTable">
+            <thead>
+                <tr>
+                    <th>Filename</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+ 
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            fetch('pdfuploads.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(result => {
+                document.getElementById('message').innerHTML = result;
+                loadPDFs();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('message').innerHTML = 'An error occurred during upload.';
+            });
+        });
+ 
+        function loadPDFs() {
+            fetch('pdfuploads.php?action=list')
+            .then(response => response.json())
+            .then(pdfs => {
+                const tbody = document.querySelector('#pdfTable tbody');
+                tbody.innerHTML = '';
+                pdfs.forEach(pdf => {
+                    const row = tbody.insertRow();
+                    row.insertCell(0).textContent = pdf.filename;
+                    const actionsCell = row.insertCell(1);
+                    actionsCell.innerHTML = `
+                        <button onclick="viewPDF(${pdf.id})">View</button>
+                        <button onclick="downloadPDF(${pdf.id})">Download</button>
+                    `;
+                });
+            })
+            .catch(error => console.error('Error:', error));
+        }
+ 
+        function viewPDF(id) {
+            window.open(`pdfuploads.php?action=view&id=${id}`, '_blank');
+        }
+ 
+        function downloadPDF(id) {
+            window.location.href = `pdfuploads.php?action=download&id=${id}`;
+        }
+ 
+        // Load PDFs when the page loads
+        loadPDFs();
+    </script>
+ 
+    <footer>
+        <p>&copy;
+            2024 CTU-Buddy. All rights reserved.<br/>
+            TEBDevs<br/>
+            Terushan Moodley 20241330 <br/>
+            Enrique Woodington 20240784<br/>
+            Brandon Goncalves 20240835<br/>
+ 
+        </p>
+    </footer>
+</body>
+</html>

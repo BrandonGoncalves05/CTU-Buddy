@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTU-Buddy | Discussion</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .discussionheader {
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .ctulogo {
+            height: 100px; /* Adjusted height */
+            width: 300px;  /* Adjusted width */
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        header {
+            background-color: #701309;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-right: 1rem;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .discussion-container {
+            width: 80%;
+            margin: 2rem auto;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #701309;
+            margin-bottom: 1.5rem;
+        }
+
+        .discussion-form {
+            margin-bottom: 2rem;
+        }
+
+        .discussion-form label {
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .discussion-form input,
+        .discussion-form textarea {
+            width: 100%;
+            padding: 0.7rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .discussion-form input[type="submit"] {
+            margin-top: 1rem;
+            background-color: #701309;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            padding: 0.7rem;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .discussion-form input[type="submit"]:hover {
+            background-color: #8b2a16;
+        }
+
+        .discussion-thread {
+            margin-top: 2rem;
+        }
+
+        .post {
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .post .user-profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .post .user-profile img {
+            border-radius: 50%;
+            width: 50px;  /* Adjusted width */
+            height: 50px; /* Adjusted height */
+            margin-right: 1rem;
+        }
+
+        .post .content {
+            margin-top: 1rem;
+        }
+
+        .reply-form {
+            margin-top: 1rem;
+            margin-left: 3rem;
+        }
+
+        .reply-form textarea {
+            width: 80%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .reply-form input[type="submit"] {
+            margin-top: 0.5rem;
+            background-color: #701309;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        .reply-form input[type="submit"]:hover {
+            background-color: #8b2a16;
+        }
+
+        footer {
+            background-color: #701309;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        #navigation:hover {
+            color: salmon;
+            text-decoration: underline;
+            transition: color 0.5 ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img class="ctulogo" src="./CTUTrainingSolutionsWhite.png" alt="CTU Training Solutions logo" />
+        <h1 class="discussionheader">Discussion Forum</h1>
+        <nav>
+            <ul>
+                <li><a href="CW412HomePage.html" id="navigation">Home</a></li>
+                <li><a href="./CWD412FA1Timetable.html" id="navigation">Timetable</a></li>
+                <li><a href="./CW412DisscusionPage.html" id="navigation">Discussion</a></li>
+                <li><a href="share-resources.html" id="navigation">Share Resources</a></li>
+                <li><a href="./CWD412AboutUs.html" id="navigation">About Us</a></li>
+                <li><a href="CW412ContactUs.html" id="navigation">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+<style>
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        button {
+            background-color: #af4c60;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #a0456c;
+        }
+        .message, .comment {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+        .message {
+            border-left: 5px solid #af4c70;
+        }
+        .comment {
+            margin-left: 20px;
+            border-left: 5px solid #2196F3;
+        }
+        .timestamp {
+            font-size: 0.8em;
+            color: #888;
+        }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Message Board</h1>
+<form id="messageForm">
+<textarea id="messageContent" rows="4" placeholder="Write your message here..." required></textarea>
+<button type="submit">Post Message</button>
+</form>
+<div id="messages"></div>
+</div>
+ 
+    <script>
+        function loadMessages() {
+            fetch('message_board.php?action=getMessages')
+                .then(response => response.json())
+                .then(data => {
+                    const messagesDiv = document.getElementById('messages');
+                    messagesDiv.innerHTML = '';
+                    data.forEach(message => {
+                        const messageDiv = document.createElement('div');
+                        messageDiv.className = 'message';
+                        messageDiv.innerHTML = `
+<p>${message.content}</p>
+<p class="timestamp">Posted on ${message.timestamp}</p>
+<form class="commentForm">
+<textarea rows="2" placeholder="Write a comment..." required></textarea>
+<button type="submit">Post Comment</button>
+</form>
+<div class="comments"></div>
+                        `;
+                        messagesDiv.appendChild(messageDiv);
+ 
+                        const commentForm = messageDiv.querySelector('.commentForm');
+                        commentForm.addEventListener('submit', function(e) {
+                            e.preventDefault();
+                            const commentContent = this.querySelector('textarea').value;
+                            postComment(message.id, commentContent, messageDiv);
+                        });
+ 
+                        loadComments(message.id, messageDiv.querySelector('.comments'));
+                    });
+                });
+        }
+ 
+        function postMessage(content) {
+            fetch('message_board.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `action=postMessage&content=${encodeURIComponent(content)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('messageContent').value = '';
+                    loadMessages();
+                } else {
+                    alert('Error posting message');
+                }
+            });
+        }
+ 
+        function postComment(messageId, content, messageDiv) {
+            fetch('message_board.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `action=postComment&messageId=${messageId}&content=${encodeURIComponent(content)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    messageDiv.querySelector('.commentForm textarea').value = '';
+                    loadComments(messageId, messageDiv.querySelector('.comments'));
+                } else {
+                    alert('Error posting comment');
+                }
+            });
+        }
+ 
+        function loadComments(messageId, commentsDiv) {
+            fetch(`message_board.php?action=getComments&messageId=${messageId}`)
+                .then(response => response.json())
+                .then(data => {
+                    commentsDiv.innerHTML = '';
+                    data.forEach(comment => {
+                        const commentDiv = document.createElement('div');
+                        commentDiv.className = 'comment';
+                        commentDiv.innerHTML = `
+<p>${comment.content}</p>
+<p class="timestamp">Posted on ${comment.timestamp}</p>
+                        `;
+                        commentsDiv.appendChild(commentDiv);
+                    });
+                });
+        }
+ 
+        document.getElementById('messageForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const content = document.getElementById('messageContent').value;
+            postMessage(content);
+        });
+ 
+        // Load messages when the page loads
+        loadMessages();
+</script>
+</body>
+</html>
+    <footer>
+        <p>&copy; 2024 CTU-Buddy. All rights reserved.
+            TEBDevs<br/>
+            Terushan Moodley, 20241330<br/>
+            Enrique Woodington, 20240784<br/>
+            Brandon Goncalves, 20240835<br/>
+        </p>
+    </footer>
+</body>
+
+</html>

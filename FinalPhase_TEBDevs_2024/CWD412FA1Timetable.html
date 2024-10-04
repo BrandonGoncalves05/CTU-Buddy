@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTU-Buddy | Timetable</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #701309;
+            color: #fff;
+            padding: 1rem;  
+            text-align: center;
+        }
+
+        .headerphoto {
+            height: 100px;
+            width: 300px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-right: 1rem;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .creator {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+
+        footer {
+            background-color: #701309;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .TimetablePF {
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid;
+        }
+        
+        th, td {
+            padding: 1px;
+            text-align: center;
+        }
+
+        .timetableheading {
+            background-color: tomato;
+        }
+
+        .hours {
+            background-color: tomato;
+        }
+
+        .daysofweek {
+            background-color:tomato;
+        }
+
+        .gr {
+            background-color: black;
+            color: white;
+        }
+
+        .research {
+            background-color: burlywood;
+        }
+
+        .break{
+            background-color: black;
+            color: white;
+        }
+
+        .dp900 {
+            background-color:darkgray;
+        }
+
+        #navigation:hover {
+            color: salmon;
+            text-decoration: underline;
+            transition: color 0.5 ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="headerphoto" src="./CTUTrainingSolutionsWhite.png" alt="Header photo"/>
+        <h1>Timetable</h1>
+        <nav>
+            <ul>
+                <li><a href="CW412HomePage.html" id="navigation">Home</a></li>
+                <li><a href="CWD412FA1Timetable.html" id="navigation">Timetable</a></li>
+                <li><a href="CW412DisscusionPage.html" id="navigation">Discussion</a></li>
+                <li><a href="share-resources.html" id="navigation">Share Resources</a></li>
+                <li><a href="./CWD412AboutUs.html" id="navigation">About Us</a></li>
+                <li><a href="CW412ContactUS.html" id="navigation">Contact Us</a></li>
+            </ul>
+        </nav>
+        <pre class="creator">Brandon Goncalves</pre>
+    </header>
+    <br/>
+    <h2 class="TimetablePF">Timetable for Programming Foundation Semester 1</h2>
+    <br/>
+    <table>
+        <th colspan="6" class="timetableheading"><h3>Timetable</h3></th>
+        <tr>
+            <th class="hours">Hours</th>
+            <th class="daysofweek">Monday</th>
+            <th class="daysofweek">Tuesday</th>
+            <th class="daysofweek">Wednesday</th>
+            <th class="daysofweek">Thursday</th>
+            <th class="daysofweek">Friday</th>
+        </tr>
+        <tr>
+            <td>8:00-9:00</td>
+            <td>PPD 411</td>
+            <td>CAF 411</td>
+            <td class="gr">GR</td>
+            <td class="gr">GR</td>
+            <td class="research">Research</td>
+        </tr>
+        <tr>
+            <td>9:00-10:00</td>
+            <td>PPD 411</td>
+            <td>CAF 411</td>
+            <td>DLP 411</td>
+            <td>PRP 411</td>
+            <td class="research">Research</td>
+        </tr>
+        <tr>
+            <td class=>10:00-11:00</td>
+            <td>PPD 411</td>
+            <td>CAF 411</td>
+            <td>DLP 411</td>
+            <td>PRP 411</td>
+            <td class="research">Research</td>
+        </tr>
+        <tr>
+            <td>11:00-12:00</td>
+            <td class="gr">GR</td>
+            <td>CAF 411</td>
+            <td>DLP 411</td>
+            <td>PRP 411</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>12:00-13:00</td>
+            <td class="gr">GR</td>
+            <td class="research">Research</td>
+            <td colspan="3" class="break">Break</td>
+        </tr>
+        <tr>
+            <td>13:00-14:00</td>
+            <td>CAF 411</td>
+            <td>DLP 411</td>
+            <td>PRP 411</td>
+            <td rowspan="3" class="dp900">Focus on international preparations DP-900</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>14:00-15:00</td>
+            <td>CAF 411</td>
+            <td>DLP 411</td>
+            <td>PRP 411</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>15:00-16:00</td>
+            <td>CAF 411</td>
+            <td>DLP 411</td>
+            <td class="gr">GR</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <br/>
+    <h2 class="TimetablePF">Timetable for Programming Foundation Semester 2</h2>
+    <br/>
+    <table>
+        <th colspan="6" class="timetableheading"><h3>Timetable</h3></th>
+        <tr>
+            <th class="hours">Hours</th>
+            <th class="daysofweek">Monday</th>
+            <th class="daysofweek">Tuesday</th>
+            <th class="daysofweek">Wednesday</th>
+            <th class="daysofweek">Thursday</th>
+            <th class="daysofweek">Friday</th>
+        </tr>
+        <tr>
+            <td>8:00-9:00</td>
+            <td>RD 412</td>
+            <td>RD 412</td>
+            <td>ENA 412</td>
+            <td>ENA 412</td>
+            <td class="gr">GR</td>
+        </tr>
+        <tr>
+            <td>9:00-10:00</td>
+            <td>RD 412</td>
+            <td>RD 412</td>
+            <td>ENA 412</td>
+            <td>ENA 412</td>
+            <td>CF 412</td>
+        </tr>
+        <tr>
+            <td class=>10:00-11:00</td>
+            <td>RD 412</td>
+            <td>RD 412</td>
+            <td>ENA 412</td>
+            <td>ENA 412</td>
+            <td>CF 412</td>
+        </tr>
+        <tr>
+            <td>11:00-12:00</td>
+            <td class="gr">GR</td>
+            <td class="research">Research</td>
+            <td>ENA 412</td>
+            <td class="research">Research</td>
+            <td>CF 412</td>
+        </tr>
+        <tr>
+            <td>12:00-13:00</td>
+            <td class="gr">GR</td>
+            <td colspan="4" class="break">Break</td>
+        </tr>
+        <tr>
+            <td>13:00-14:00</td>
+            <td>CW 412</td>
+            <td>ENA 412</td>
+            <td>ENA 412</td>
+            <td>FDM 411</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>14:00-15:00</td>
+            <td>CW 412</td>
+            <td>ENA 412</td>
+            <td>ENA 412</td>
+            <td>FDM 411</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>15:00-16:00</td>
+            <td>CW 412</td>
+            <td>ENA 412</td>
+            <td>ENA 412</td>
+            <td>FDM 411</td>
+            <td></td>
+        </tr>
+    </table>
+    <br/>
+    <footer>
+        <p>&copy; 2024 CTU-Buddy. All rights reserved.<br/>
+            TEBDevs<br/>
+        Terushan Moodley, 20241330<br/>
+        Enrique Woodington, 20240784<br/>
+        Brandon Goncalves, 20240835<br/>
+        </p>
+    </footer>
+</body>
+</html>
